@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@500&family=Open+Sans:ital,wght@1,600&family=Oswald:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/latest.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Welcome to Latest Recepie of a Day</h1>
+    <div id="container-2"></div>
+</body>
+</html>
+<script type="module">
+ import nav from "../components/nav.js";
+document.querySelector("#navbar").innerHTML=nav();
+
+import  {getData,append} from "./scripts/random.js";
+let cont=document.querySelector("#container-2")
+getData(`https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`).then((res)=>{
+      console.log(res)
+     append(res,cont)    //append index.js me hnga or return other js me
+
+ });
+</script>
+  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowRecipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@500&family=Open+Sans:ital,wght@1,600&family=Oswald:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/show.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Welcome to Recepie</h1>
+    <div id="container-3"></div>
+</body>
+</html>
+<script type="module">
+    import nav from "../components/nav.js";
+   document.querySelector("#navbar").innerHTML=nav();
+   
+   let con=JSON.parse(localStorage.getItem("mealdata"));
+  // console.log(con)
+  let c=document.querySelector("#container-3")
+  let Div=document.createElement("div")
+ 
+         let img=document.createElement("img")
+         img.src=con.strMealThumb;
+ 
+         let h2=document.createElement("h2")
+         h2.innerText=con.strMeal;
+
+         Div.append(img,h2)
+         c.append(Div)
+
+ 
+  
+ </script>  
